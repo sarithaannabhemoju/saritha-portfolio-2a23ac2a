@@ -17,7 +17,7 @@ const Projects = () => {
       ],
       icon: Activity,
       color: "bg-blue-500",
-      image: "/placeholder.svg"
+      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Social Media Analytics",
@@ -32,7 +32,7 @@ const Projects = () => {
       ],
       icon: BarChart,
       color: "bg-purple-500",
-      image: "/placeholder.svg"
+      image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Oil Price Impact on GDP",
@@ -47,7 +47,7 @@ const Projects = () => {
       ],
       icon: LineChart,
       color: "bg-green-500",
-      image: "/placeholder.svg"
+      image: "https://images.unsplash.com/photo-1579621970795-87facc2f976d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -70,11 +70,11 @@ const Projects = () => {
             {projects.map((project, index) => (
               <div key={index} className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <div className="aspect-video bg-portfolio-beige rounded-xl overflow-hidden shadow-lg flex items-center justify-center">
+                  <div className="aspect-video bg-portfolio-beige rounded-xl overflow-hidden shadow-lg">
                     <img 
                       src={project.image} 
                       alt={project.title} 
-                      className="w-auto h-3/4 max-w-full"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 </div>

@@ -80,11 +80,11 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Healthcare Analytics Project */}
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all">
-              <div className="h-48 bg-portfolio-light-brown/20 flex items-center justify-center">
+              <div className="h-48 bg-portfolio-light-brown/20 overflow-hidden">
                 <img 
-                  src="/placeholder.svg" 
+                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
                   alt="Healthcare Analytics Project" 
-                  className="h-32 w-auto"
+                  className="h-full w-full object-cover"
                 />
               </div>
               <div className="p-6">
@@ -103,11 +103,11 @@ const Home = () => {
 
             {/* Social Media Analytics Project */}
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all">
-              <div className="h-48 bg-portfolio-light-brown/20 flex items-center justify-center">
+              <div className="h-48 bg-portfolio-light-brown/20 overflow-hidden">
                 <img 
-                  src="/placeholder.svg" 
+                  src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
                   alt="Social Media Analytics Project" 
-                  className="h-32 w-auto"
+                  className="h-full w-full object-cover"
                 />
               </div>
               <div className="p-6">
@@ -126,11 +126,11 @@ const Home = () => {
 
             {/* Oil Price Impact Project */}
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all">
-              <div className="h-48 bg-portfolio-light-brown/20 flex items-center justify-center">
+              <div className="h-48 bg-portfolio-light-brown/20 overflow-hidden">
                 <img 
-                  src="/placeholder.svg" 
+                  src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
                   alt="Oil Price Impact Project" 
-                  className="h-32 w-auto"
+                  className="h-full w-full object-cover"
                 />
               </div>
               <div className="p-6">
