@@ -29,7 +29,7 @@ const Home = () => {
           </div>
           <div className="relative mx-auto">
             <div className="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-8 border-portfolio-cream shadow-xl animate-fade-in">
-              <img src="/lovable-uploads/fa546229-28b5-416b-b766-08a5592d4d4b.png" alt="Annabhemoju Saritha" className="w-full h-full object-cover" />
+              <img src="/lovable-uploads/122be8b3-534a-41c6-9467-5191c6561825.png" alt="Annabhemoju Saritha" className="w-full h-full object-cover" />
             </div>
             
           </div>
