@@ -1,7 +1,15 @@
 
 import React from 'react';
-import { BarChart, Briefcase, PieChart, Award, GraduationCap, Certificate } from 'lucide-react';
+import { BarChart, Briefcase, PieChart, Award, GraduationCap } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { 
+  Card,
+  CardContent, 
+  CardDescription, 
+  CardFooter, 
+  CardHeader, 
+  CardTitle 
+} from "@/components/ui/card";
 
 const Skills = () => {
   const technicalSkills = [
@@ -26,44 +34,48 @@ const Skills = () => {
 
   const certifications = [
     {
-      title: "Data Analytics with Python",
-      issuer: "IBM",
-      date: "December 2023",
-      description: "Comprehensive course covering data manipulation, analysis, and visualization using Python libraries including Pandas, NumPy, and Matplotlib.",
-      icon: <Certificate className="text-portfolio-brown" size={24} />,
-      badge: "Advanced"
-    },
-    {
-      title: "Power BI Desktop for Business Intelligence",
-      issuer: "Microsoft",
-      date: "March 2024",
-      description: "Advanced techniques for creating interactive dashboards and business intelligence solutions using DAX functions and data modeling.",
+      title: "Introduction to Business Analytics",
+      issuer: "LinkedIn Learning",
+      date: "May 16, 2025",
+      description: "Comprehensive course covering fundamental business analytics concepts, methods, and applications for data-driven decision making.",
       icon: <Award className="text-portfolio-brown" size={24} />,
-      badge: "Professional"
+      badge: "Foundational",
+      imageSrc: "/lovable-uploads/29ef5a23-84b9-4ecd-bd80-b53c2104ed94.png"
     },
     {
-      title: "SQL for Data Analysis",
-      issuer: "Udacity",
-      date: "January 2024",
-      description: "Skills for querying databases, joining tables, and performing advanced SQL operations for analytics and reporting.",
+      title: "Data Visualization with Matplotlib and Seaborn",
+      issuer: "LinkedIn Learning",
+      date: "May 16, 2025",
+      description: "Advanced techniques for creating impactful data visualizations using Python libraries including Matplotlib and Seaborn.",
+      icon: <Award className="text-portfolio-brown" size={24} />,
+      badge: "Advanced",
+      imageSrc: "/lovable-uploads/c5be128b-1e41-42aa-ab47-dcee92590eed.png"
+    },
+    {
+      title: "HR Internship at Marpu Foundation",
+      issuer: "Internshala",
+      date: "February 19, 2023",
+      description: "Secured an internship in Human Resources through Internshala, gaining practical experience in HR operations.",
       icon: <GraduationCap className="text-portfolio-brown" size={24} />,
-      badge: "Intermediate"
+      badge: "Practical Experience",
+      imageSrc: "/lovable-uploads/1b0d4d90-45a0-4fa7-9b1b-e5c6465c0b7d.png"
+    },
+    {
+      title: "Presenting Data",
+      issuer: "HP LIFE",
+      date: "January 27, 2025",
+      description: "Skills for creating effective charts using spreadsheet software and selecting appropriate chart types to convey information clearly.",
+      icon: <Award className="text-portfolio-brown" size={24} />,
+      badge: "Specialized",
+      imageSrc: "/lovable-uploads/53ed1f5e-8379-443a-9153-6735b2d9802b.png"
     },
     {
       title: "Excel VBA and Macros",
       issuer: "Coursera",
       date: "November 2023",
       description: "Creating automated workflows and custom functions using Visual Basic for Applications in Microsoft Excel.",
-      icon: <Certificate className="text-portfolio-brown" size={24} />,
-      badge: "Intermediate"
-    },
-    {
-      title: "HR Analytics: Using Data for Better Hiring Decisions",
-      issuer: "LinkedIn Learning",
-      date: "April 2024",
-      description: "Leveraging data analytics techniques to improve recruitment processes and talent acquisition strategies.",
       icon: <Award className="text-portfolio-brown" size={24} />,
-      badge: "Specialized"
+      badge: "Intermediate"
     }
   ];
 
@@ -164,35 +176,44 @@ const Skills = () => {
         </div>
       </section>
 
-      {/* Certifications - Enhanced Section */}
+      {/* Certifications - Enhanced Section with Images */}
       <section className="py-16 bg-white">
-        <div className="container-custom max-w-5xl">
+        <div className="container-custom max-w-6xl">
           <div className="flex items-center gap-3 justify-center mb-12">
             <PieChart size={24} className="text-portfolio-brown" />
             <h2 className="text-3xl font-bold gradient-text">Certifications</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {certifications.map((cert, index) => (
-              <div 
-                key={index} 
-                className="bg-portfolio-beige/30 p-6 rounded-lg border border-portfolio-brown/20 hover:shadow-lg transition-all"
-              >
-                <div className="flex justify-between items-center mb-4">
-                  <div className="bg-portfolio-brown/10 w-16 h-16 rounded-full flex items-center justify-center">
-                    {cert.icon}
+              <Card key={index} className="overflow-hidden border-portfolio-brown/20 hover:shadow-lg transition-all">
+                <CardHeader className="pb-0">
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center gap-2">
+                      {cert.icon}
+                      <Badge variant="outline" className="bg-portfolio-brown/5 text-portfolio-dark-brown border-portfolio-brown/20">
+                        {cert.badge}
+                      </Badge>
+                    </div>
+                    <p className="text-xs text-portfolio-gray">{cert.date}</p>
                   </div>
-                  <Badge variant="outline" className="bg-portfolio-brown/5 text-portfolio-dark-brown border-portfolio-brown/20">
-                    {cert.badge}
-                  </Badge>
-                </div>
-                <h3 className="text-xl font-semibold mb-2 text-portfolio-dark-brown">{cert.title}</h3>
-                <div className="flex items-center justify-between mb-3">
-                  <p className="text-sm text-portfolio-brown font-medium">{cert.issuer}</p>
-                  <p className="text-xs text-portfolio-gray">{cert.date}</p>
-                </div>
-                <p className="text-portfolio-gray">{cert.description}</p>
-              </div>
+                </CardHeader>
+                <CardContent className="pt-4">
+                  <CardTitle className="text-xl mb-2 text-portfolio-dark-brown">{cert.title}</CardTitle>
+                  <CardDescription className="text-sm font-medium text-portfolio-brown mb-2">{cert.issuer}</CardDescription>
+                  <p className="text-portfolio-gray text-sm mb-4">{cert.description}</p>
+                  
+                  {cert.imageSrc && (
+                    <div className="mt-4 flex justify-center">
+                      <img 
+                        src={cert.imageSrc} 
+                        alt={`${cert.title} Certificate`} 
+                        className="rounded-md w-full max-h-64 object-contain border border-portfolio-beige"
+                      />
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
             ))}
           </div>
           
