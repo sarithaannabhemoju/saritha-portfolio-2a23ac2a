@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { BarChart, Briefcase, PieChart } from 'lucide-react';
+import { BarChart, Briefcase, PieChart, Award, GraduationCap, Certificate } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 
 const Skills = () => {
   const technicalSkills = [
@@ -21,6 +22,49 @@ const Skills = () => {
     { name: "Problem Solving", description: "Skilled at identifying innovative solutions to business challenges through data analysis and creative thinking." },
     { name: "Time Management", description: "Proficient at prioritizing tasks and managing multiple projects efficiently to meet deadlines without compromising quality." },
     { name: "Adaptability", description: "Quickly adjust to changing requirements and new tools, maintaining productivity in dynamic environments." }
+  ];
+
+  const certifications = [
+    {
+      title: "Data Analytics with Python",
+      issuer: "IBM",
+      date: "December 2023",
+      description: "Comprehensive course covering data manipulation, analysis, and visualization using Python libraries including Pandas, NumPy, and Matplotlib.",
+      icon: <Certificate className="text-portfolio-brown" size={24} />,
+      badge: "Advanced"
+    },
+    {
+      title: "Power BI Desktop for Business Intelligence",
+      issuer: "Microsoft",
+      date: "March 2024",
+      description: "Advanced techniques for creating interactive dashboards and business intelligence solutions using DAX functions and data modeling.",
+      icon: <Award className="text-portfolio-brown" size={24} />,
+      badge: "Professional"
+    },
+    {
+      title: "SQL for Data Analysis",
+      issuer: "Udacity",
+      date: "January 2024",
+      description: "Skills for querying databases, joining tables, and performing advanced SQL operations for analytics and reporting.",
+      icon: <GraduationCap className="text-portfolio-brown" size={24} />,
+      badge: "Intermediate"
+    },
+    {
+      title: "Excel VBA and Macros",
+      issuer: "Coursera",
+      date: "November 2023",
+      description: "Creating automated workflows and custom functions using Visual Basic for Applications in Microsoft Excel.",
+      icon: <Certificate className="text-portfolio-brown" size={24} />,
+      badge: "Intermediate"
+    },
+    {
+      title: "HR Analytics: Using Data for Better Hiring Decisions",
+      issuer: "LinkedIn Learning",
+      date: "April 2024",
+      description: "Leveraging data analytics techniques to improve recruitment processes and talent acquisition strategies.",
+      icon: <Award className="text-portfolio-brown" size={24} />,
+      badge: "Specialized"
+    }
   ];
 
   return (
@@ -120,7 +164,7 @@ const Skills = () => {
         </div>
       </section>
 
-      {/* Certifications */}
+      {/* Certifications - Enhanced Section */}
       <section className="py-16 bg-white">
         <div className="container-custom max-w-5xl">
           <div className="flex items-center gap-3 justify-center mb-12">
@@ -128,33 +172,28 @@ const Skills = () => {
             <h2 className="text-3xl font-bold gradient-text">Certifications</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-portfolio-beige/30 p-6 rounded-lg border border-portfolio-brown/20">
-              <div className="bg-portfolio-brown/10 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <span className="text-3xl">🏆</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {certifications.map((cert, index) => (
+              <div 
+                key={index} 
+                className="bg-portfolio-beige/30 p-6 rounded-lg border border-portfolio-brown/20 hover:shadow-lg transition-all"
+              >
+                <div className="flex justify-between items-center mb-4">
+                  <div className="bg-portfolio-brown/10 w-16 h-16 rounded-full flex items-center justify-center">
+                    {cert.icon}
+                  </div>
+                  <Badge variant="outline" className="bg-portfolio-brown/5 text-portfolio-dark-brown border-portfolio-brown/20">
+                    {cert.badge}
+                  </Badge>
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-portfolio-dark-brown">{cert.title}</h3>
+                <div className="flex items-center justify-between mb-3">
+                  <p className="text-sm text-portfolio-brown font-medium">{cert.issuer}</p>
+                  <p className="text-xs text-portfolio-gray">{cert.date}</p>
+                </div>
+                <p className="text-portfolio-gray">{cert.description}</p>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-portfolio-dark-brown">Data Analytics with Python</h3>
-              <p className="text-sm text-portfolio-gray mb-2">IBM</p>
-              <p className="text-portfolio-gray">Comprehensive course covering data manipulation, analysis, and visualization using Python libraries.</p>
-            </div>
-            
-            <div className="bg-portfolio-beige/30 p-6 rounded-lg border border-portfolio-brown/20">
-              <div className="bg-portfolio-brown/10 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <span className="text-3xl">🏆</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-portfolio-dark-brown">Power BI Desktop for Business Intelligence</h3>
-              <p className="text-sm text-portfolio-gray mb-2">Microsoft</p>
-              <p className="text-portfolio-gray">Advanced techniques for creating interactive dashboards and business intelligence solutions.</p>
-            </div>
-            
-            <div className="bg-portfolio-beige/30 p-6 rounded-lg border border-portfolio-brown/20">
-              <div className="bg-portfolio-brown/10 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <span className="text-3xl">🏆</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-portfolio-dark-brown">SQL for Data Analysis</h3>
-              <p className="text-sm text-portfolio-gray mb-2">Udacity</p>
-              <p className="text-portfolio-gray">Skills for querying databases, joining tables, and performing advanced SQL operations for analytics.</p>
-            </div>
+            ))}
           </div>
           
           <div className="mt-12 text-center">
